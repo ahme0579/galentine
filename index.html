@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Yes or No</title>
+    <link rel="stylesheet" href="css/main.css">
+</head>
+
+<body>
+    <div id="container">
+        <img id="image" src="My_Melody_happy.png" alt="Image">
+        <div id="buttons">
+            <a id="yesButton" class="button" href="yes.html">Yes</a>
+            <button id="noButton" class="xbutton">No</button>
+        </div>
+    </div>
+
+    <script>
+        var yesButton = document.getElementById('yesButton');
+        var noButton = document.getElementById('noButton');
+        var noButtonTexts = ["please", "daddy please", "im on my knees", "BEGGING YOU PLEASE", "ILL SUCK UR DICK", "i told my mom about u", "ill become ur carpet"];
+
+        noButton.addEventListener('click', function () {
+            var randomIndex = Math.floor(Math.random() * noButtonTexts.length);
+            noButton.innerText = noButtonTexts[randomIndex];
+            var currentSize = parseFloat(window.getComputedStyle(yesButton).fontSize);
+            yesButton.style.fontSize = (currentSize + 7) + 'px';
+        });
+
+        // Prevent default form submission behavior
+        noButton.addEventListener('click', function (event) {
+            event.preventDefault();
+        });
+    </script>
+
+</body>
+
+</html>
